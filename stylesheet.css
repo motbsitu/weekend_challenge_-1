@@ -1,0 +1,56 @@
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+form {
+    margin: 0 auto;
+    width: 800px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    font-size: 20px;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    display: inline-block;
+    width: 200px;
+    text-align: justify;
+}
+input:focus, textarea:focus {
+    /* To give a little highlight on active elements */
+    border-color: #000;
+}
+
+.input-box {
+  width: 500px;
+  height: 25px;
+}
+#submit-button{
+  font-size: 15px;
+  margin: 20px 10px 10px 160px;
+  width: 500px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 3em;
+
+}
+
+
+table
+{
+border-collapse: collapse;
+border-spacing: 0px;
+width: 100%;
+}
+table, th, td
+{
+padding: 5px;
+border: 1px solid black;
+width: 1000px;
+
+}
