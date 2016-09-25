@@ -2,6 +2,8 @@
 
 //FORMS
 $(document).ready(function(){
+
+  var totalSalary = 0;
   //event listener
   $('#employee-info').on('submit', function(event){
   //to prevent default behavior of adding name labels
@@ -31,39 +33,45 @@ $(document).ready(function(){
   //appending to the document, call the function creating later
   appendDom(employee);
 
-  //call my new function that calulates monthly expense
-  // monthlySalaryCalc(employee);
-
-
 
   });
   function appendDom(emp) {
 
       //employee object is represented by emp, created jQuery object class of employee
-      var $emp =$('<div class="employee"></div>');
+      var $emp =$('<tr class="employee"></tr>');
       //appended paragraph to that div employee
       // orginal    $emp.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + ' ' + emp.employeeId + ' ' + emp.jobTitle + ' ' + emp.employeeSalary + '</p>');
 
       //append table
-      $emp.append('<td class="employee-columns">' + emp.employeeFirstName + '</td>');
+      $emp.append('<td class="employee-columns">' + emp.employeeFirstName +  '</td>');
       $emp.append('<td class="employee-columns">' + emp.employeeLastName + '</td>');
       $emp.append('<td class="employee-columns">' + emp.employeeId + '</td>');
       $emp.append('<td class="employee-columns">' + emp.jobTitle + '</td>');
       $emp.append('<td class="annualSalary">' + emp.employeeSalary + '</td>');
+      $emp.append('<td >  <button class="deleteButton"> Delete Employee </button>  </td>');
 
       //select something on DOM to append it to
-      $('#employee-data').append($emp);
+      $('#employeeTable').append($emp);
 
+      $('.deleteButton').last().data("salary", emp.employeeSalary);
+        //console.log($('.deleteButton').last().data("salary"));
+      //add total salary on each click
       totalSalary += parseInt(emp.employeeSalary);
-
-      $('#monthly-salary').text(totalSalary/12);
-
+      //display monthly salary
+      $('#monthly-salary').empty();
+      $('#monthly-salary').append(totalSalary/12);
   }
 
-    var totalSalary = 0;
 
 
 
+//delete tabel row
 
+    $("#employeeTable").on('click','.deleteButton',function(){
+      var recalcSalary = $(this).data("salary");
+      totalSalary -= recalcSalary;
+      $('#monthly-salary').text(totalSalary/12);
+      $(this).parent().parent().remove();
+})
 
 });
