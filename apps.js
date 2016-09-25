@@ -13,8 +13,6 @@ $(document).ready(function(){
   var employee = {};
 
   //method serialize array to take values from form and put into array
-  //creates [{name: "employeeFirstName"  (this is the element.name)
-  //            value: "Name"}]
   var fields = $('#employee-info').serializeArray();
  //console.log('fields', fields);
 
@@ -22,7 +20,6 @@ $(document).ready(function(){
   fields.forEach(function(element, index){
     //first input from form, iterates over them to create object
     employee[element.name] = element.value;
-
 
   });
   //console.log('employee object', employee);
@@ -63,9 +60,7 @@ $(document).ready(function(){
   }
 
 
-
-
-//delete tabel row
+//delete table row
 
     $("#employeeTable").on('click','.deleteButton',function(){
       var recalcSalary = $(this).data("salary");
@@ -73,5 +68,7 @@ $(document).ready(function(){
       $('#monthly-salary').text(totalSalary/12);
       $(this).parent().parent().remove();
 })
+
+
 
 });
