@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 
   });
-  console.log('employee object', employee);
+  //console.log('employee object', employee);
 
   //clear form, .val('changestext')
   $('#employee-info').find('input[type=text]').val('');
@@ -31,10 +31,10 @@ $(document).ready(function(){
   //appending to the document, call the function creating later
   appendDom(employee);
 
-  //call my new function that calulates monthlySalary
-  salaryCalc(employee);
+  //call my new function that calulates monthly expense
+  // monthlySalaryCalc(employee);
 
-  console.log(employeeSalary.value);
+
 
   });
   function appendDom(emp) {
@@ -42,22 +42,27 @@ $(document).ready(function(){
       //employee object is represented by emp, created jQuery object class of employee
       var $emp =$('<div class="employee"></div>');
       //appended paragraph to that div employee
-      $emp.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + ' ' + emp.employeeId + ' ' + emp.jobTitle + ' ' + emp.employeeSalary + '</p>');
+      // orginal    $emp.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + ' ' + emp.employeeId + ' ' + emp.jobTitle + ' ' + emp.employeeSalary + '</p>');
+
+      //append table
+      $emp.append('<td class="employee-columns">' + emp.employeeFirstName + '</td>');
+      $emp.append('<td class="employee-columns">' + emp.employeeLastName + '</td>');
+      $emp.append('<td class="employee-columns">' + emp.employeeId + '</td>');
+      $emp.append('<td class="employee-columns">' + emp.jobTitle + '</td>');
+      $emp.append('<td class="annualSalary">' + emp.employeeSalary + '</td>');
+
       //select something on DOM to append it to
       $('#employee-data').append($emp);
+
+      totalSalary += parseInt(emp.employeeSalary);
+
+      $('#monthly-salary').text(totalSalary/12);
+
   }
-//new function to figure out salary calc
+
+    var totalSalary = 0;
 
 
-
-function salaryCalc(){
-//take in an employee (yearly) salary and you will return a total monthly salary (for all employees).
-var annualSalary = 0;
-var monthlySalary = 0;
-
-
-
-}
 
 
 

@@ -41,7 +41,7 @@ input:focus, textarea:focus {
 }
 
 
-table
+.employee-table
 {
 border-collapse: collapse;
 border-spacing: 0px;
@@ -49,6 +49,12 @@ width: 100%;
 }
 table, th, td
 {
+padding: 5px;
+border: 1px solid black;
+width: 1000px;
+
+}
+.employee-columns{
 padding: 5px;
 border: 1px solid black;
 width: 1000px;
