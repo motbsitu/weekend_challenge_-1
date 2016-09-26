@@ -2,7 +2,10 @@ body{
   font-family: 'Source Sans Pro', sans-serif;
 
 }
-
+h1{
+  text-align: center;
+  font-size: 45px;
+}
 form {
     margin: 0 auto;
     width: 800px;
@@ -40,13 +43,6 @@ input:focus, textarea:focus {
 
 }
 
-
-.employee-table
-{
-border-collapse: collapse;
-border-spacing: 0px;
-width: 100%;
-}
 table, th, td
 {
 padding: 5px;
@@ -54,12 +50,15 @@ border: 1px solid black;
 width: 1000px;
 
 }
-.employee-columns{
-padding: 5px;
-border: 1px solid black;
-width: 1000px;
 
+tr:first-of-type{
+  background-color: #e6ac00;
+}
+table{
+  border-collapse: collapse;
 }
 .deleteButton{
-  border:none;
+  border: 2px solid red;
+  margin: auto;
+  border-radius: 1em;
 }
