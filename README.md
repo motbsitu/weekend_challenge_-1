@@ -1,9 +1,11 @@
 #ANGULAR update to weekend Challenge
 - change all the logic from jQuery to Angular
 
+
+
 # Weekend Challenge 1
 
-- Create an application that records employee data, including their salary. We also want to add the salaries up so we know how much we’re spending each month.
+- An application that records employee data, including their salary. We also want to add the salaries up so we know how much we’re spending each month.
 
 The application should first have an input form that collects:
 

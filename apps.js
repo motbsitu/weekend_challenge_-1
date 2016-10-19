@@ -17,8 +17,9 @@ employee.createList = function(){
 
   employee.totalSalary += parseInt(employee.list.salary);
   employee.monthlySalary = (employee.totalSalary/12).toFixed(2)
-
-  employee.employee-info.$setPristine();
+//can't figure out clearning the form
+  employee.list.firstName.empty();
+  employee.employeeInfo.$setPristine();
 
 }
 
